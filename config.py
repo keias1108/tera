@@ -99,13 +99,13 @@ MIN_INITIAL_PLANT_DISTANCE = 3
 
 # 식물 생존 및 성장
 MIN_HEALTH_FOR_SURVIVAL = 0.1 # 최소 생존 건강
-ENERGY_COST_FOR_MAINTENANCE_PER_CYCLE = 0.05 # 크기 1.0 기준 생명 유지 에너지 소모량
+ENERGY_COST_FOR_MAINTENANCE_PER_CYCLE = 0.02 # 크기 1.0 기준 생명 유지 에너지 소모량
 WATER_COST_FOR_MAINTENANCE_PER_CYCLE = 0.02 # 크기 1.0 기준 생명 유지 수분 소모량
-PHOTOSYNTHESIS_BASE_EFFICIENCY = 0.1 # 기본 광합성 효율
+PHOTOSYNTHESIS_BASE_EFFICIENCY = 0.3 # 기본 광합성 효율
 WATER_ABSORPTION_RATE = 0.1 # 토양에서 물 흡수율 (가용 수분 대비)
-STRESS_DAMAGE_RATE = 5.0 # 환경 스트레스 시 건강 감소율
-HEALING_RATE_UNDER_OPTIMAL_CONDITIONS = 2.0 # 최적 환경에서 건강 회복률
-SEED_DEATH_CHANCE_PER_CYCLE_IF_UNABLE_TO_GERMINATE = 0.01 # 발아 불가시 씨앗 사망 확률
+STRESS_DAMAGE_RATE = 1.5 # 환경 스트레스 시 건강 감소율
+HEALING_RATE_UNDER_OPTIMAL_CONDITIONS = 3.0 # 최적 환경에서 건강 회복률
+SEED_DEATH_CHANCE_PER_CYCLE_IF_UNABLE_TO_GERMINATE = 0.00 # 발아 불가시 씨앗 사망 확률
 
 # 식물 성장
 SAPLING_TO_ADULT_GROWTH_PER_CYCLE = 0.01 # 유묘 -> 성체 기본 성장량 (사이즈)
@@ -118,7 +118,24 @@ REPRODUCTION_ENERGY_THRESHOLD_FACTOR = 0.8 # 최대 에너지 대비 번식 시�
 REPRODUCTION_WATER_THRESHOLD_FACTOR = 0.6 # 최대 수분 대비 번식 시도 가능 수분 비율
 
 # 식물 죽음
-DEAD_PLANT_REMOVAL_CYCLES = 90 # 죽은 식물이 맵에서 사라지기까지의 시간
+DEAD_PLANT_REMOVAL_CYCLES = 30 # 죽은 식물이 맵에서 사라지기까지의 시간
+
+# 디버그 정보 표시용 게이지바 설정
+GAUGE_BAR_WIDTH = 150  # 게이지바 너비
+GAUGE_BAR_HEIGHT = 18   # 게이지바 높이
+GAUGE_TEXT_OFFSET = 5 # 게이지바와 텍스트 사이 간격
+DEBUG_INFO_START_X = (MAP_WIDTH * GRID_SIZE) + 20 # 디버그 정보 표시 시작 X 위치
+DEBUG_INFO_START_Y = 20                           # 디버그 정보 표시 시작 Y 위치
+DEBUG_INFO_LINE_SPACING = 25                     # 디버그 정보 줄 간격
+DEBUG_INFO_CATEGORY_SPACING = 10                 # 디버그 정보 카테고리 간 간격 (텍스트와 바 사이)
+
+# 게이지바 색상
+GAUGE_BAR_COLORS = {
+    "ENERGY": (255, 223, 0),    # 노란색 계열 (금색)
+    "WATER": (0, 150, 255),     # 파란색 계열
+    "HEALTH": (0, 200, 0),      # 녹색 계열
+    "BACKGROUND": (70, 70, 70)  # 어두운 회색
+}
 
 # 디버그 모드
 DEBUG_MODE = False
